@@ -1,0 +1,50 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "api channel schedule response",
+  "type": "object",
+  "properties": {
+    "result": { "type": "integer" },
+    "collection": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "integer" },
+          "start": { "type": "integer" },
+          "is_catchup_available": { "type": "boolean" },
+          "channel_id": { "type": "integer" },
+          "duration": { "type": "integer" },
+          "end": { "type": "integer" },
+          "title": { "type": "string" },
+          "program": {
+            "type": "object",
+            "properties": {
+              "id": { "type": "integer" },
+              "is_series": { "type": "boolean" },
+              "resources": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "url": { "type": "string" },
+                    "category": { "type": "string" },
+                    "device_groups": { "type": "array" },
+                    "id": { "type": "integer" },
+                    "is_public": { "type": "boolean" },
+                    "type": { "type": "string" },
+                    "resource_group_id": { "type": "integer" },
+                    "is_deployed": { "type": "boolean" }
+                  }
+                }
+              },
+              "description": { "type": "string" },
+              "title": { "type": "string" }
+            }
+          }
+        },
+        "minItems": 1
+      }
+    }
+  },
+  "required": [ "result", "collection" ]
+}

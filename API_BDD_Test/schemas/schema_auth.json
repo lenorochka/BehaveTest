@@ -1,0 +1,20 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "api auth response",
+  "type": "object",
+  "properties": {
+    "is_bound": {
+      "type": "boolean"
+    },
+    "token": {
+      "type": "string"
+    },
+    "expires": {
+      "type": "integer"
+    },
+    "result": {
+      "type": "integer"
+    }
+  },
+  "required": [ "is_bound", "token", "expires", "result" ]
+}
